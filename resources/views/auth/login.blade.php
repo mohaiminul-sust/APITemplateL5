@@ -36,8 +36,16 @@
         {!! Form::password('password', array('class' => 'form-control', 'placeholder' => 'Password')) !!}
 
         <label class="checkbox">
-		                <span class="pull-right">
-		                    <a data-toggle="modal" href="#myModal"> Forgot Password?</a>
+                        <span class="pull-left">
+
+                            <a data-toggle="modal" href="{{route('user.create')}}"> Want to be a member ?</a>
+                            
+                        </span>
+                        <span class="pull-right">
+
+
+		                    <a data-toggle="modal" href="#myModal"> Forgot Password ?</a>
+                            
 		                </span>
         </label>
         {!! Form::submit('Log in', array('class' => 'btn btn-lg btn-login btn-block')) !!}
