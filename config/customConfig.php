@@ -2,7 +2,7 @@
 
 return [
     'names' =>[
-        'siteName' => 'Newspaper'
+        'siteName' => 'Login Template'
     ],
     'roles' =>[
         'admin' => 'Admin',
