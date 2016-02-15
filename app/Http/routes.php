@@ -15,6 +15,8 @@
 //     return view('welcome');
 // });
 Route::get('/',function(){
+	return \App\User::first();
+	//return array_keys(config('customConfig.roles'));
 	return redirect()->route('dashboard');
 });
 Route::group(['middleware' => 'guest'], function(){
