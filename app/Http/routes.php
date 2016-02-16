@@ -27,7 +27,7 @@ Route::group(['middleware' => 'guest'], function(){
 	Route::post('login', array('uses' => 'Auth\AuthController@doLogin'));
 });
 
-Route::group(array('middleware' => 'auth'), function()
+Route::group(['middleware' => 'auth'], function()
 {
 
 	Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@logout']);
@@ -38,4 +38,9 @@ Route::group(array('middleware' => 'auth'), function()
 	Route::post('change-password', array('as' => 'password.doChange', 'uses' => 'Auth\AuthController@doChangePassword'));
 
 
+});
+Route::group(['middleware' => ['auth', 'admin']], function(){
+	Route::get('test',function(){
+		return \App\User::first();
+	});
 });
