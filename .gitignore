@@ -1,5 +1,4 @@
 # Laravel 5 & Lumen specific
-bootstrap/cache/
 vendor/
 storage/
 .env.*.php
