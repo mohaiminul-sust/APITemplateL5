@@ -1,5 +1,4 @@
 # Laravel 5 & Lumen specific
-/bootstrap/compiled.php
 /vendor
 /node_modules
 Homestead.yaml
@@ -9,7 +8,6 @@ Homestead.json
 .env
 composer.phar
 composer.lock
-_ide_helper.php
 ### PhpStorm ###
 
 *.iml
@@ -23,3 +21,6 @@ _ide_helper.php
 # .idea/tasks.xml
 # .idea/dictionaries
 # .idea/shelf
+
+# Packages
+_ide_helper.php
