@@ -1,16 +1,17 @@
 # Laravel 5 & Lumen specific
-bootstrap/cache/
+bootstrap/cache/compiled.php
 vendor/
 storage/
 .env.*.php
 .env.php
 .env
 .env.example
-composer.phar
-composer.lock
 ### PhpStorm ###
 
 *.iml
+# Composer
+composer.phar
+composer.lock
 
 ## Directory-based project format:
 .idea/
