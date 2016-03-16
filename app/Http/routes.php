@@ -11,14 +11,14 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/',function(){
-	return \App\User::first();
-	//return array_keys(config('customConfig.roles'));
-	return redirect()->route('dashboard');
+Route::get('/', function () {
+    return view('welcome');
 });
+// Route::get('/',function(){
+// 	// return \App\User::first();
+// 	//return array_keys(config('customConfig.roles'));
+// 	return redirect()->route('login');
+// });
 Route::group(['middleware' => 'guest'], function(){
 	Route::controller('password', 'RemindersController');
 	Route::get('login', ['as'=>'login','uses' => 'Auth\AuthController@login']);
