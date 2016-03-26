@@ -148,6 +148,11 @@ return [
         Zizaco\Entrust\EntrustServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Laravel\Cashier\CashierServiceProvider::class,
+
+        /*
+         * API Service Providers...
+         */
+        EllipseSynergie\ApiResponse\Laravel\ResponseServiceProvider::class,
     ],
 
     /*
