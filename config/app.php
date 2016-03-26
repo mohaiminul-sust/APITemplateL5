@@ -153,6 +153,8 @@ return [
          * API Service Providers...
          */
         EllipseSynergie\ApiResponse\Laravel\ResponseServiceProvider::class,
+        LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
+        LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
     ],
 
     /*
@@ -203,7 +205,8 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
-        'Entrust'   =>Zizaco\Entrust\EntrustFacade::class
+        'Entrust'   =>Zizaco\Entrust\EntrustFacade::class,
+        'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
     ],
 
 ];
