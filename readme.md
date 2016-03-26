@@ -10,8 +10,9 @@ Contribution is limited to added members only
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within API, please send an e-mail to mohaiminul_sust at mohaiminul.sust@gmail.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within API, please send an e-mail to mohaiminul-sust at mohaiminul.sust@gmail.com. All security vulnerabilities will be promptly addressed.
 
 ### License
 
 This template is licensed under creative commons
+This API template is solely licensed under infancyIT
