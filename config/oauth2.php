@@ -8,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
+use app\API\Models\User;
 return [
 
     /*
@@ -28,7 +28,38 @@ return [
     */
 
     'grant_types' => [
+        'password' => [
+            'class'            => 'League\OAuth2\Server\Grant\PasswordGrant',
+            'access_token_ttl' => 604800,
 
+            // the code to run in order to verify the user's identity
+            // '\rlapi\controllers\PasswordVerifier@verify'
+            'callback'  => function($email, $password){
+                $credentials = [
+                    'email' => $email,
+                    'password' => $password
+                ];
+
+                try{
+                    $user = User::where('email', $credentials['email'])->first();
+
+                    if(!Hash::check($credentials['password'], $user->password)){
+
+                        return false;
+                    }
+
+                    return $user->id;
+                }catch(\ErrorException $e){
+                    return false;
+                }
+            },
+        ],
+
+        'refresh_token' => [
+            'class' => '\League\OAuth2\Server\Grant\RefreshTokenGrant',
+            'access_token_ttl' => 3600,
+            'refresh_token_ttl' => 36000
+        ]
     ],
 
     /*
