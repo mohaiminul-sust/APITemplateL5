@@ -14,13 +14,52 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
+        $tables = [
+            'users',
+            'apiuser',
+            'roles',
+            'permission_role',
+            'permissions',
+            'oauth_session_scopes',
+            'oauth_sessions',
+            'oauth_scopes',
+            'oauth_refresh_tokens',
+            'oauth_grant_scopes',
+            'oauth_grants',
+            'oauth_client_scopes',
+            'oauth_client_grants',
+            'oauth_client_endpoints',
+            'oauth_clients',
+            'oauth_auth_code_scopes',
+            'oauth_auth_codes',
+            'oauth_access_token_scopes',
+            'oauth_access_tokens',
+            'assigned_roles',
+            'forget_password',
+            'apiuser_info',
+        ];
+
         if (env('DB_CONNECTION') == 'mysql') {
             DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         }
 
+        $this->command->info('...Truncating Tables...');
+
+        foreach ($tables as $table) {
+            DB::table($table)->truncate();
+            $this->command->info($table.' truncated...');
+        }
+
+        $this->command->info('...All Tables Truncated Successfully...');
+
+        $this->command->info('...Seeding Initiated...');
+
+
         $this->call(RolesTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(EntrustTableSeeder::class);
+        $this->call(ApiUserTableSeeder::class);
+        $this->call(ApiUserInfoTableSeeder::class);
 
         if (env('DB_CONNECTION') == 'mysql') {
             DB::statement('SET FOREIGN_KEY_CHECKS=1;');
