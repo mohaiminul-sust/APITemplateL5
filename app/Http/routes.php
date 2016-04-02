@@ -42,7 +42,7 @@ Route::group(array('middleware' => 'auth'), function()
 
 
 //API route getter
-$file = __DIR__.'/API/apiroutes.php';
+$file = 'app/API/apiroutes.php';
 
 if (!file_exists($file))
 {
