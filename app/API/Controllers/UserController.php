@@ -6,19 +6,18 @@
  * Time: 3:24 AM
  */
 
-namespace app\API\Controllers;
+namespace App\API\Controllers;
 
 
-use app\API\Models\User;
-use app\API\Models\UserInfo;
-use app\API\Transformers\UserInfoTransformer;
-use app\API\Transformers\UserTransformer;
+use App\API\Models\User;
+use App\API\Models\UserInfo;
+use App\API\Transformers\UserInfoTransformer;
+use App\API\Transformers\UserTransformer;
 use App\Http\Controllers\Controller;
 use EllipseSynergie\ApiResponse\Laravel\Response;
 use League\Fractal\Serializer\DataArraySerializer;
 use League\Fractal\Manager;
 use Validator;
-use Auth;
 use Hash;
 use Illuminate\Http\Request;
 use Mail;

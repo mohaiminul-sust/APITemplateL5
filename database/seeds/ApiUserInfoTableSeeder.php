@@ -6,10 +6,7 @@
  * Time: 5:48 AM
  */
 
-namespace database\seeds;
-
-
-use app\API\Models\UserInfo;
+use App\API\Models\UserInfo;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 

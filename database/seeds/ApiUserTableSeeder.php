@@ -6,12 +6,9 @@
  * Time: 5:34 AM
  */
 
-namespace database\seeds;
 
-
-use app\API\Models\User;
+use App\API\Models\User;
 use Illuminate\Database\Seeder;
-use Hash;
 
 class ApiUserTableSeeder extends Seeder
 {

@@ -16,19 +16,19 @@ Route::group(['prefix' => 'api/v1'], function(){
         return Response::json(Authorizer::issueAccessToken());
     });
 
-    Route::post('register', ['uses'=>'app\API\Controllers\UserController@doRegister']);
-    Route::post('forgetpass', ['uses'=>'app\API\Controllers\UserController@forgetPassword']);
-    Route::get('activation/{key}', ['uses'=>'app\API\Controllers\UserController@activateUser']);
+    Route::post('register', ['uses'=>'App\API\Controllers\UserController@doRegister']);
+    Route::post('forgetpass', ['uses'=>'App\API\Controllers\UserController@forgetPassword']);
+    Route::get('activation/{key}', ['uses'=>'App\API\Controllers\UserController@activateUser']);
 
     Route::group(['before'=>'oauth'], function(){
 
-        Route::get('logout', ['uses'=>'app\API\Controllers\UserController@logout']);
-        Route::get('info', ['uses'=>'app\API\Controllers\UserController@userInfo']);
+        Route::get('logout', ['uses'=>'App\API\Controllers\UserController@logout']);
+        Route::get('info', ['uses'=>'App\API\Controllers\UserController@userInfo']);
 
         Route::group(['prefix' => 'users'], function(){
 
-            Route::get('/', ['uses'=>'app\API\Controllers\UserController@index']);
-            Route::get('/{id}', ['uses'=>'app\API\Controllers\UserController@show']);
+            Route::get('/', ['uses'=>'App\API\Controllers\UserController@index']);
+            Route::get('/{id}', ['uses'=>'App\API\Controllers\UserController@show']);
 
         });
 

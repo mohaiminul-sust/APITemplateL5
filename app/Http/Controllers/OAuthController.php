@@ -6,11 +6,11 @@
  * Time: 4:34 AM
  */
 
-namespace app\Http\Controllers;
+namespace App\Http\Controllers;
 
 
-use app\API\Models\Device;
-use app\API\Models\User;
+use App\API\Models\Device;
+use App\API\Models\User;
 use Illuminate\Routing\Controller;
 use Auth;
 use Redirect;

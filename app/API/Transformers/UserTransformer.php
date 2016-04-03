@@ -6,9 +6,9 @@
  * Time: 3:34 AM
  */
 
-namespace app\API\Transformers;
+namespace App\API\Transformers;
 
-use app\API\Models\User;
+use App\API\Models\User;
 use League\Fractal\TransformerAbstract;
 
 class UserTransformer extends TransformerAbstract

@@ -6,10 +6,10 @@
  * Time: 3:41 AM
  */
 
-namespace app\API\Transformers;
+namespace App\API\Transformers;
 
 
-use app\API\Models\Device;
+use App\API\Models\Device;
 use League\Fractal\TransformerAbstract;
 
 class DeviceTransformer extends TransformerAbstract

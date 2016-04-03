@@ -15,11 +15,8 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $tables = [
-            'users',
-            'apiuser',
-            'roles',
+            'role_user',
             'permission_role',
-            'permissions',
             'oauth_session_scopes',
             'oauth_sessions',
             'oauth_scopes',
@@ -34,14 +31,16 @@ class DatabaseSeeder extends Seeder
             'oauth_auth_codes',
             'oauth_access_token_scopes',
             'oauth_access_tokens',
-            'assigned_roles',
+            'permissions',
+            'roles',
             'forget_password',
+            'apiuser',
             'apiuser_info',
+            'users',
+
         ];
 
-        if (env('DB_CONNECTION') == 'mysql') {
-            DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        }
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
         $this->command->info('...Truncating Tables...');
 
@@ -61,9 +60,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ApiUserTableSeeder::class);
         $this->call(ApiUserInfoTableSeeder::class);
 
-        if (env('DB_CONNECTION') == 'mysql') {
-            DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-        }
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         Model::reguard();
     }
