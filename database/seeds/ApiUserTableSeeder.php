@@ -7,7 +7,7 @@
  */
 
 
-use App\API\Models\User;
+use App\Http\API\Models\User;
 use Illuminate\Database\Seeder;
 
 class ApiUserTableSeeder extends Seeder

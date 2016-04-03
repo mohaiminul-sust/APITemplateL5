@@ -6,7 +6,7 @@
  * Time: 5:48 AM
  */
 
-use App\API\Models\UserInfo;
+use App\Http\API\Models\UserInfo;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 

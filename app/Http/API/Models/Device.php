@@ -3,23 +3,27 @@
  * Created by PhpStorm.
  * User: Andromeda
  * Date: 4/3/2016
- * Time: 3:13 AM
+ * Time: 3:16 AM
  */
 
-namespace App\API\Models;
+namespace App\Http\API\Models;
 use Illuminate\Database\Eloquent\Model;
 
 
 /**
- * @property mixed user
+ * @property mixed id
+ * @property mixed device_id
  */
-class UserInfo extends Model
+class Device extends Model
 {
     protected $guarded = ['id'];
-    protected $table = 'apiuser_info';
+    protected $table = 'device_id';
+
+    public static $rules = [
+        'device_id' => 'required',
+    ];
 
     public function user(){
         return $this->belongsTo('API\Models\User', 'apiuser_id', 'id');
     }
-
 }

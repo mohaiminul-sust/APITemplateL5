@@ -9,9 +9,8 @@
 namespace App\Http\Controllers;
 
 
-use App\API\Models\Device;
-use App\API\Models\User;
-use Illuminate\Routing\Controller;
+use App\Http\API\Models\Device;
+use App\Http\API\Models\User;
 use Auth;
 use Redirect;
 use Response;

@@ -1,4 +1,4 @@
-<?php
+<?php namespace App\Http\Controllers\API;
 /**
  * Created by PhpStorm.
  * User: Andromeda
@@ -6,23 +6,21 @@
  * Time: 3:24 AM
  */
 
-namespace App\API\Controllers;
 
-
-use App\API\Models\User;
-use App\API\Models\UserInfo;
-use App\API\Transformers\UserInfoTransformer;
-use App\API\Transformers\UserTransformer;
+use App\Http\API\Models\User;
+use App\Http\API\Models\UserInfo;
+use App\Http\API\Transformers\UserInfoTransformer;
+use App\Http\API\Transformers\UserTransformer;
 use App\Http\Controllers\Controller;
 use EllipseSynergie\ApiResponse\Laravel\Response;
 use League\Fractal\Serializer\DataArraySerializer;
 use League\Fractal\Manager;
+use Illuminate\Http\Request;
+use Input;
 use Validator;
 use Hash;
-use Illuminate\Http\Request;
-use Mail;
-use Input;
 use Exception;
+use Mail;
 
 class UserController extends Controller
 {
@@ -239,7 +237,7 @@ class UserController extends Controller
 
                 return $this->response->errorForbidden('You are not registered!');
             }
-        }catch (\Exception $ex){
+        }catch (Exception $ex){
 
             return $this->response->errorInternalError("User can't be processed!");
         }

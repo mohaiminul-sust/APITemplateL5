@@ -42,12 +42,12 @@ Route::group(array('middleware' => 'auth'), function()
 
 
 //API route getter
-$file = 'app/API/apiroutes.php';
+$file = __DIR__.'\apiroutes.php';
+
 
 if (!file_exists($file))
 {
-	$msg = "API routes not found.";
-	throw new \Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException($msg);
+	throw new \Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException($file);
 }
 
 require_once $file;
